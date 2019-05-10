@@ -30,6 +30,7 @@ class ButtonTableViewCell: UITableViewCell {
             print("Off")
         }
     }
+    
 }
 
 protocol ButtonViewCellDelegate: class {

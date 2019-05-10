@@ -22,5 +22,7 @@ class CoreDataStack {
         })
         return persistantContainer
     }()
-    static var context: NSManagedObjectContext { return container.viewContext}
+    static var context: NSManagedObjectContext {
+        return container.viewContext
+    }
 }

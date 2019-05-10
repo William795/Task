@@ -23,13 +23,9 @@ class TaskDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        barTitleLabel.title = task?.name
-        nameTextField.text = task?.name
-        noteTextBlock.text = task?.note
-        guard let taskDue = task?.due else {return}
-        dueDatePicker.date = taskDue
-        dueTextField.text = task?.TimeAsString
         dueTextField.inputView = dueDatePicker
+        updateView()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -39,9 +35,30 @@ class TaskDetailViewController: UIViewController {
         if let task = self.task{
             TaskController.shared.updateTask(task: task, with: taskName, note: taskNote, due: dueDatePicker.date)
             navigationController?.popViewController(animated: true)
+            print("updated")
         }else{
             TaskController.shared.createTask(name: taskName, note: taskNote, due: dueDatePicker.date)
             navigationController?.popViewController(animated: true)
+            print("saved")
         }
+    }
+    
+    func updateView(){
+        guard let task = task else {return}
+        nameTextField.text = task.name
+        noteTextBlock.text = task.note
+        dueTextField.text = task.due?.stringValue()
+    }
+}
+
+
+
+
+extension Date {
+    func stringValue() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        
+        return formatter.string(from: self)
     }
 }

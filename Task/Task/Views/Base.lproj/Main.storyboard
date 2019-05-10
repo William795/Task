@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fj9-2F-fao">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fj9-2F-fao">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,7 @@
         <!--Tasks-->
         <scene sceneID="LO6-Kf-KRf">
             <objects>
-                <tableViewController id="PzB-rj-v2Q" customClass="TaskListTableViewController" customModule="Task" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="PzB-rj-v2Q" customClass="TasksListTableViewController" customModule="Task" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lQt-WP-4c2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,25 +30,29 @@
                                             <rect key="frame" x="16" y="11" width="343" height="49"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axf-xx-Nyf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="278" height="49"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="284" height="49"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kl7-fR-lBS">
-                                                    <rect key="frame" x="288" y="0.0" width="55" height="49"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kl7-fR-lBS">
+                                                    <rect key="frame" x="294" y="0.0" width="49" height="49"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="49" id="E5b-64-2Jw"/>
                                                         <constraint firstAttribute="width" constant="49" id="hAk-va-WDf"/>
-                                                        <constraint firstAttribute="width" secondItem="kl7-fR-lBS" secondAttribute="height" multiplier="1.1" constant="1" id="roP-Rl-rxN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="5"/>
-                                                    <state key="normal" image="CheckedBox"/>
+                                                    <state key="normal" image="BlankBox"/>
                                                     <connections>
                                                         <action selector="boxButtonPressed:" destination="vwS-JK-8dG" eventType="touchUpInside" id="2FO-Ja-VgX"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kl7-fR-lBS" firstAttribute="top" secondItem="yDx-6Y-dVe" secondAttribute="top" id="NEn-6L-9dd"/>
+                                                <constraint firstAttribute="trailing" secondItem="kl7-fR-lBS" secondAttribute="trailing" id="aJ8-Nj-Wke"/>
+                                                <constraint firstAttribute="bottom" secondItem="kl7-fR-lBS" secondAttribute="bottom" id="yZ9-uY-sfF"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -61,7 +65,6 @@
                                 <connections>
                                     <outlet property="BoxButton" destination="kl7-fR-lBS" id="pLs-un-YDV"/>
                                     <outlet property="CellNameLabel" destination="Axf-xx-Nyf" id="qDk-g2-l1b"/>
-                                    <outlet property="cellNameLabel" destination="Axf-xx-Nyf" id="F4F-Jn-6kz"/>
                                     <segue destination="bXi-Ea-wMe" kind="show" identifier="taskSegue" id="5uX-vf-kh4"/>
                                 </connections>
                             </tableViewCell>
@@ -114,19 +117,19 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vq6-8d-Omx">
-                                <rect key="frame" x="15" y="104" width="40" height="17"/>
+                                <rect key="frame" x="15" y="104" width="345" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYV-uN-Qbg">
-                                <rect key="frame" x="14" y="318" width="39" height="17"/>
+                                <rect key="frame" x="14" y="318" width="346" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DUE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2B4-o0-dCV">
-                                <rect key="frame" x="15" y="211" width="29" height="17"/>
+                                <rect key="frame" x="15" y="211" width="345" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -136,7 +139,9 @@
                         <constraints>
                             <constraint firstItem="yNw-3S-J9w" firstAttribute="trailing" secondItem="Hak-Om-zf6" secondAttribute="trailing" id="5qN-Jy-ea9"/>
                             <constraint firstItem="qoS-hx-wee" firstAttribute="leading" secondItem="yNw-3S-J9w" secondAttribute="leading" id="6oi-0X-zaL"/>
+                            <constraint firstItem="yNw-3S-J9w" firstAttribute="trailing" secondItem="vq6-8d-Omx" secondAttribute="trailing" constant="15" id="DUA-ic-Hhd"/>
                             <constraint firstItem="yNw-3S-J9w" firstAttribute="bottom" secondItem="qoS-hx-wee" secondAttribute="bottom" constant="150" id="HFI-ys-PY3"/>
+                            <constraint firstItem="yNw-3S-J9w" firstAttribute="trailing" secondItem="ZYV-uN-Qbg" secondAttribute="trailing" constant="15" id="JFX-PI-dXC"/>
                             <constraint firstItem="2B4-o0-dCV" firstAttribute="leading" secondItem="yNw-3S-J9w" secondAttribute="leading" constant="15" id="Kki-1F-ctN"/>
                             <constraint firstItem="yNw-3S-J9w" firstAttribute="trailing" secondItem="RS3-6n-AE5" secondAttribute="trailing" id="Lk5-Sw-NgM"/>
                             <constraint firstItem="ZYV-uN-Qbg" firstAttribute="top" secondItem="Hak-Om-zf6" secondAttribute="bottom" constant="40" id="Mvx-kV-2nL"/>
@@ -148,6 +153,7 @@
                             <constraint firstItem="ZYV-uN-Qbg" firstAttribute="leading" secondItem="yNw-3S-J9w" secondAttribute="leading" constant="14" id="ict-mk-Lxo"/>
                             <constraint firstItem="2B4-o0-dCV" firstAttribute="top" secondItem="RS3-6n-AE5" secondAttribute="bottom" constant="40" id="p0w-G0-V9w"/>
                             <constraint firstItem="RS3-6n-AE5" firstAttribute="top" secondItem="vq6-8d-Omx" secondAttribute="bottom" constant="20" id="qYF-Kx-mzE"/>
+                            <constraint firstItem="yNw-3S-J9w" firstAttribute="trailing" secondItem="2B4-o0-dCV" secondAttribute="trailing" constant="15" id="r6W-F7-XBl"/>
                             <constraint firstItem="RS3-6n-AE5" firstAttribute="leading" secondItem="yNw-3S-J9w" secondAttribute="leading" id="tMR-3v-u2R"/>
                             <constraint firstItem="Hak-Om-zf6" firstAttribute="leading" secondItem="yNw-3S-J9w" secondAttribute="leading" id="uUq-vZ-5Ka"/>
                         </constraints>
@@ -201,7 +207,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CheckedBox" width="72" height="73"/>
+        <image name="BlankBox" width="36.5" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5uX-vf-kh4"/>

@@ -13,7 +13,6 @@
 		92C42EE92283572700A7C9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92C42EE72283572700A7C9C1 /* LaunchScreen.storyboard */; };
 		92C42EF42283572700A7C9C1 /* TaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C42EF32283572700A7C9C1 /* TaskTests.swift */; };
 		92C42EFF2283572700A7C9C1 /* TaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C42EFE2283572700A7C9C1 /* TaskUITests.swift */; };
-		92C42F102283676200A7C9C1 /* TaskListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C42F0F2283676200A7C9C1 /* TaskListTableViewController.swift */; };
 		92C42F12228368F600A7C9C1 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C42F11228368F600A7C9C1 /* TaskDetailViewController.swift */; };
 		92C42F172283694700A7C9C1 /* Task.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92C42F152283694700A7C9C1 /* Task.xcdatamodeld */; };
 		92C42F1A22836A4100A7C9C1 /* Task+Convience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C42F1922836A4100A7C9C1 /* Task+Convience.swift */; };
@@ -21,6 +20,7 @@
 		92C42F1E2283703900A7C9C1 /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C42F1D2283703900A7C9C1 /* TaskController.swift */; };
 		92C42F23228379CD00A7C9C1 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C42F22228379CD00A7C9C1 /* TaskTableViewCell.swift */; };
 		92C42F25228391D500A7C9C1 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C42F24228391D500A7C9C1 /* ButtonTableViewCell.swift */; };
+		92F3731E2284C7D0009EBAF8 /* TasksListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F3731D2284C7D0009EBAF8 /* TasksListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 		92C42EFA2283572700A7C9C1 /* TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C42EFE2283572700A7C9C1 /* TaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskUITests.swift; sourceTree = "<group>"; };
 		92C42F002283572700A7C9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		92C42F0F2283676200A7C9C1 /* TaskListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListTableViewController.swift; sourceTree = "<group>"; };
 		92C42F11228368F600A7C9C1 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		92C42F162283694700A7C9C1 /* Task.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Task.xcdatamodel; sourceTree = "<group>"; };
 		92C42F1922836A4100A7C9C1 /* Task+Convience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convience.swift"; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		92C42F1D2283703900A7C9C1 /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 		92C42F22228379CD00A7C9C1 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		92C42F24228391D500A7C9C1 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		92F3731D2284C7D0009EBAF8 /* TasksListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +152,7 @@
 		92C42F132283692100A7C9C1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				92C42F0F2283676200A7C9C1 /* TaskListTableViewController.swift */,
+				92F3731D2284C7D0009EBAF8 /* TasksListTableViewController.swift */,
 				92C42F11228368F600A7C9C1 /* TaskDetailViewController.swift */,
 			);
 			path = "View Controllers";
@@ -262,13 +262,16 @@
 				TargetAttributes = {
 					92C42EDA2283572500A7C9C1 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					92C42EEE2283572700A7C9C1 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 92C42EDA2283572500A7C9C1;
 					};
 					92C42EF92283572700A7C9C1 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 92C42EDA2283572500A7C9C1;
 					};
 				};
@@ -327,7 +330,7 @@
 			files = (
 				92C42F25228391D500A7C9C1 /* ButtonTableViewCell.swift in Sources */,
 				92C42F1C22836A6900A7C9C1 /* CoreDataStack.swift in Sources */,
-				92C42F102283676200A7C9C1 /* TaskListTableViewController.swift in Sources */,
+				92F3731E2284C7D0009EBAF8 /* TasksListTableViewController.swift in Sources */,
 				92C42F23228379CD00A7C9C1 /* TaskTableViewCell.swift in Sources */,
 				92C42F1A22836A4100A7C9C1 /* Task+Convience.swift in Sources */,
 				92C42EDF2283572500A7C9C1 /* AppDelegate.swift in Sources */,
@@ -516,7 +519,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "William-Moody.Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -533,7 +536,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "William-Moody.Task";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -552,7 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "William-Moody.TaskTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Task.app/Task";
 			};
@@ -572,7 +575,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "William-Moody.TaskTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Task.app/Task";
 			};
@@ -591,7 +594,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "William-Moody.TaskUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Task;
 			};
@@ -610,7 +613,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "William-Moody.TaskUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Task;
 			};

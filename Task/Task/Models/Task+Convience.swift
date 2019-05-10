@@ -11,12 +11,6 @@ import CoreData
 
 extension Tasks {
     
-    var TimeAsString: String{
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        return formatter.string(from: due!)
-    }
     
     @discardableResult
     convenience init(name: String, note: String, due: Date, iscomplete: Bool = false, context: NSManagedObjectContext = CoreDataStack.context){
